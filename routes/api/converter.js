@@ -9,7 +9,7 @@ router.post("/", async (req, res) => {
     // Extract type and value from the request body
     const { type, value } = req.body;
     // Check if the type is "feet" and the value is a valid number
-    if (type.toLowerCase() === "feet2meter" && !isNaN(value)) {
+    if (type && type.toLowerCase() === "feet2meter" && !isNaN(value)) {
         // log to server console for debugging
         console.log("received data: " + req.body.type + " for " + req.body.value);
         // Convert value from feet to meters (1 foot = 0.3048 meters)
